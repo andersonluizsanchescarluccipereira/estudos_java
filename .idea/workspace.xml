@@ -15,8 +15,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -53,30 +54,18 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="br.com.avancado.cnpj" />
       <recent name="br.com.semaforo.comsemaforo" />
       <recent name="br.com.semaforo.semsemaforo" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in estudos">
-    <configuration name="OperacaoBancaria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.semaforo.semsemaforo.OperacaoBancaria" />
+    <configuration name="EfetuarCalculos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.avancado.design.chainOfResponsability.EfetuarCalculos" />
       <module name="estudos" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.semaforo.semsemaforo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="br.com.semaforo.comsemaforo.OperacaoBancaria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.semaforo.comsemaforo.OperacaoBancaria" />
-      <module name="estudos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.semaforo.comsemaforo.*" />
+          <option name="PATTERN" value="br.com.avancado.design.chainOfResponsability.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,6 +77,37 @@
       <module name="estudos" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CNPJTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="estudos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.avancado.cnpj.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.avancado.cnpj" />
+      <option name="MAIN_CLASS_NAME" value="br.com.avancado.cnpj.CNPJTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CNPJTest.deveRecusarCNPJComCaracteresEspeciaisInvalidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="estudos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.avancado.cnpj.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.avancado.cnpj" />
+      <option name="MAIN_CLASS_NAME" value="br.com.avancado.cnpj.CNPJTest" />
+      <option name="METHOD_NAME" value="deveRecusarCNPJComCaracteresEspeciaisInvalidos" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,8 +157,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.br.com.semaforo.comsemaforo.OperacaoBancaria" />
-      <item itemvalue="Application.OperacaoBancaria" />
+      <item itemvalue="Application.EfetuarCalculos" />
+      <item itemvalue="JUnit.CNPJTest" />
+      <item itemvalue="JUnit.CNPJTest.deveRecusarCNPJComCaracteresEspeciaisInvalidos" />
       <item itemvalue="JUnit.All in estudos" />
       <item itemvalue="JUnit.ContaBancariaTest" />
       <item itemvalue="Maven.estudosTest" />
@@ -146,9 +167,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in estudos" />
+        <item itemvalue="JUnit.CNPJTest" />
+        <item itemvalue="JUnit.CNPJTest.deveRecusarCNPJComCaracteresEspeciaisInvalidos" />
+        <item itemvalue="Application.EfetuarCalculos" />
         <item itemvalue="JUnit.ContaBancariaTest" />
-        <item itemvalue="Application.OperacaoBancaria" />
-        <item itemvalue="Application.br.com.semaforo.comsemaforo.OperacaoBancaria" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +193,25 @@
           <line>15</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/br/com/avancado/cnpj/CNPJTest.java</url>
+          <line>40</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CNPJ.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/estudos_vaja$CNPJTest.ic" NAME="CNPJTest Coverage Results" MODIFIED="1751745735351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>br.com.avancado.cnpj.*</FILTER>
+    </SUITE>
   </component>
 </project>
