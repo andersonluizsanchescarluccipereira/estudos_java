@@ -1,12 +1,9 @@
 package br.com.avancado.cnpj;
 
-import java.util.Objects;
-
-public class CNPJ implements IdentificadorCNPJ {
-
-    private final String numeroLimpo;
+public class CNPJ extends CNPJBase implements IdentificadorCNPJ {
 
     public CNPJ(String cnpj) {
+        super(cnpj);
         this.numeroLimpo = limpar(cnpj);
         if (!numeroLimpo.matches("\\d{14}")) {
             throw new IllegalArgumentException("CNPJ numérico inválido.");
@@ -37,9 +34,6 @@ public class CNPJ implements IdentificadorCNPJ {
         return false;
     }
 
-    private String limpar(String cnpj) {
-        return Objects.requireNonNull(cnpj).replaceAll("[^A-Za-z0-9]", "");
-    }
     private boolean validaDigitosVerificadores(String cnpj) {
         int[] pesos1 = {5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
         int[] pesos2 = {6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
