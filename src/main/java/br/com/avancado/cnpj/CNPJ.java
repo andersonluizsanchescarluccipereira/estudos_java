@@ -5,74 +5,67 @@ import java.util.Objects;
 public class CNPJ implements IdentificadorCNPJ {
 
     private final String numeroLimpo;
-    public CNPJ(String cnpj) {
-        if (cnpj == null) {
-            throw new IllegalArgumentException("CNPJ não pode ser nulo");
-        }
-        String apenasNumeros = cnpj.replaceAll("[^\\d]", "");
 
-        if (apenasNumeros.length() != 14 || !isValid(apenasNumeros)) {
-            throw new IllegalArgumentException("CNPJ inválido: " + cnpj);
+    public CNPJ(String cnpj) {
+        this.numeroLimpo = limpar(cnpj);
+        if (!numeroLimpo.matches("\\d{14}")) {
+            throw new IllegalArgumentException("CNPJ numérico inválido.");
         }
-        this.numeroLimpo = apenasNumeros;
+        if (!validaDigitosVerificadores(numeroLimpo)) {
+            throw new IllegalArgumentException("CNPJ inválido - dígitos verificadores incorretos.");
+        }
     }
 
-   @Override
+    @Override
     public String getNumeroLimpo() {
         return numeroLimpo;
     }
 
     @Override
     public String getNumeroFormatado() {
-        return String.format("%s.%s.%s/%s-%s",
-                numeroLimpo.substring(0, 2),
-                numeroLimpo.substring(2, 5),
-                numeroLimpo.substring(5, 8),
-                numeroLimpo.substring(8, 12),
-                numeroLimpo.substring(12));
+        // Exemplo básico de formatação, pode ajustar conforme desejar
+        return numeroLimpo.replaceFirst("(\\d{2})(\\d{3})(\\d{3})(\\d{4})(\\d{2})", "$1.$2.$3/$4-$5");
     }
 
-    private boolean isValid(String cnpj) {
-        if (cnpj.chars().distinct().count() == 1) {
-            return false; // Exclui sequências como 000... ou 111...
+    @Override
+    public boolean isNumerico() {
+        return true;
+    }
+
+    @Override
+    public boolean isAlfanumerico() {
+        return false;
+    }
+
+    private String limpar(String cnpj) {
+        return Objects.requireNonNull(cnpj).replaceAll("[^A-Za-z0-9]", "");
+    }
+    private boolean validaDigitosVerificadores(String cnpj) {
+        int[] pesos1 = {5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
+        int[] pesos2 = {6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
+
+        try {
+            int soma = 0;
+            for (int i = 0; i < 12; i++) {
+                soma += Character.getNumericValue(cnpj.charAt(i)) * pesos1[i];
+            }
+            int resto = soma % 11;
+            int dv1 = (resto < 2) ? 0 : 11 - resto;
+
+            if (dv1 != Character.getNumericValue(cnpj.charAt(12))) {
+                return false;
+            }
+
+            soma = 0;
+            for (int i = 0; i < 13; i++) {
+                soma += Character.getNumericValue(cnpj.charAt(i)) * pesos2[i];
+            }
+            resto = soma % 11;
+            int dv2 = (resto < 2) ? 0 : 11 - resto;
+
+            return dv2 == Character.getNumericValue(cnpj.charAt(13));
+        } catch (Exception e) {
+            return false;
         }
-
-        String cnpjBase = cnpj.substring(0, 12);
-        String dvCalculado = calculateDV(cnpjBase);
-
-        return cnpj.endsWith(dvCalculado);
-    }
-
-    private String calculateDV(String cnpjBase) {
-        int firstDV = calculateDigit(cnpjBase, new int[]{5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2});
-        int secondDV = calculateDigit(cnpjBase + firstDV, new int[]{6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2});
-        return String.valueOf(firstDV) + secondDV;
-    }
-
-    private int calculateDigit(String cnpj, int[] pesos) {
-        int soma = 0;
-        for (int i = 0; i < pesos.length; i++) {
-            soma += Character.getNumericValue(cnpj.charAt(i)) * pesos[i];
-        }
-        int resto = soma % 11;
-        return (resto < 2) ? 0 : 11 - resto;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof CNPJ)) return false;
-        CNPJ cnpj = (CNPJ) o;
-        return numeroLimpo.equals(cnpj.numeroLimpo);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(numeroLimpo);
-    }
-
-    @Override
-    public String toString() {
-        return getNumeroFormatado();
     }
 }

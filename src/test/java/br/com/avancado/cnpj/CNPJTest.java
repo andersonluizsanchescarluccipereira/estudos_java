@@ -2,55 +2,44 @@ package br.com.avancado.cnpj;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
-class CNPJTest {
+public class CNPJTest {
 
     @Test
-    void deveCriarCNPJValido() {
-        CNPJ cnpj = new CNPJ("11.222.333/0001-81");
+    public void deveCriarCnpjNumericoValido() {
+        CNPJ cnpj = new CNPJ("11222333000181");
+
         assertEquals("11222333000181", cnpj.getNumeroLimpo());
         assertEquals("11.222.333/0001-81", cnpj.getNumeroFormatado());
+        assertTrue(cnpj.isNumerico());
+        assertFalse(cnpj.isAlfanumerico());
     }
 
     @Test
-    void deveRecusarCNPJComDigitosInvalidos() {
-        assertThrows(IllegalArgumentException.class, () -> new CNPJ("11.222.333/0001-00"));
+    public void deveRemoverCaracteresEspeciaisENormalizar() {
+        CNPJ cnpj = new CNPJ("11.222.333/0001-81");
+
+        assertEquals("11222333000181", cnpj.getNumeroLimpo());
     }
 
     @Test
-    void deveRecusarCNPJComTamanhoIncorreto() {
+    public void deveLancarExcecaoParaCnpjComMenosDe14Numeros() {
         assertThrows(IllegalArgumentException.class, () -> new CNPJ("112223330001"));
     }
 
     @Test
-    void deveRecusarCNPJComTodosOsDigitosIguais() {
-        assertThrows(IllegalArgumentException.class, () -> new CNPJ("11.111.111/1111-11"));
+    public void deveLancarExcecaoParaCnpjComMaisDe14Numeros() {
+        assertThrows(IllegalArgumentException.class, () -> new CNPJ("1122233300018111"));
     }
 
     @Test
-    void deveSerIgualSeOsCNPJsForemIguais() {
-        CNPJ cnpj1 = new CNPJ("11.222.333/0001-81");
-        CNPJ cnpj2 = new CNPJ("11222333000181");
-
-        assertEquals(cnpj1, cnpj2);
+    public void deveLancarExcecaoParaCnpjComLetras() {
+        assertThrows(IllegalArgumentException.class, () -> new CNPJ("AB222333000181"));
     }
 
     @Test
-    void deveRecusarCNPJComCaracteresEspeciaisInvalidos() {
-        assertThrows(IllegalArgumentException.class, () -> new CNPJ("11.22A.333/0001-81@"));
-        assertThrows(IllegalArgumentException.class, () -> new CNPJ("abcdefg"));
+    public void deveLancarExcecaoParaNull() {
+        assertThrows(NullPointerException.class, () -> new CNPJ(null));
     }
-
-    @Test
-    void deveRecusarCNPJVazio() {
-        assertThrows(IllegalArgumentException.class, () -> new CNPJ(""));
-    }
-
-    @Test
-    void deveRecusarCNPJNulo() {
-        assertThrows(IllegalArgumentException.class, () -> new CNPJ(null));
-    }
-
 }

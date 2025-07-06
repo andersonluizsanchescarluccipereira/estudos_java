@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56a8ea52-218e-4293-bfc9-abb588ce6bc6" name="Changes" comment="" />
+    <list default="true" id="56a8ea52-218e-4293-bfc9-abb588ce6bc6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CNPJ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CNPJ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CNPJAlfanumerico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CNPJAlfanumerico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CnpjAlfanumericoStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CnpjAlfanumericoStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CnpjComumStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CnpjComumStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CnpjStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CnpjStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/IdentificadorCNPJ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/IdentificadorCNPJ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/avancado/cnpj/CNPJAlfanumericoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/avancado/cnpj/CNPJAlfanumericoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/avancado/cnpj/CNPJTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/avancado/cnpj/CNPJTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +23,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "feature/semaphoro",
@@ -60,19 +70,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in estudos">
-    <configuration name="EfetuarCalculos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.avancado.design.chainOfResponsability.EfetuarCalculos" />
-      <module name="estudos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.avancado.design.chainOfResponsability.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in estudos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="estudos" />
       <option name="PACKAGE_NAME" value="" />
@@ -96,7 +93,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CNPJTest.deveRecusarCNPJComCaracteresEspeciaisInvalidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CnpjFacadeTest.devePermitirConversaoCompletaPorPadrao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="estudos" />
       <extension name="coverage">
         <pattern>
@@ -105,24 +102,41 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.com.avancado.cnpj" />
-      <option name="MAIN_CLASS_NAME" value="br.com.avancado.cnpj.CNPJTest" />
-      <option name="METHOD_NAME" value="deveRecusarCNPJComCaracteresEspeciaisInvalidos" />
+      <option name="MAIN_CLASS_NAME" value="br.com.avancado.cnpj.CnpjFacadeTest" />
+      <option name="METHOD_NAME" value="devePermitirConversaoCompletaPorPadrao" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContaBancariaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CnpjFacadeTest.devePermitirIdentificacaoComCnpjAlfanumericoValido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="estudos" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.semaforo.semsemaforo.*" />
+          <option name="PATTERN" value="br.com.avancado.cnpj.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="br.com.semaforo.semsemaforo" />
-      <option name="MAIN_CLASS_NAME" value="br.com.semaforo.semsemaforo.ContaBancariaTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="br.com.avancado.cnpj" />
+      <option name="MAIN_CLASS_NAME" value="br.com.avancado.cnpj.CnpjFacadeTest" />
+      <option name="METHOD_NAME" value="devePermitirIdentificacaoComCnpjAlfanumericoValido" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CnpjFacadeTest.deveRecusarCnpjNumericoRealComDvInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="estudos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.avancado.cnpj.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.avancado.cnpj" />
+      <option name="MAIN_CLASS_NAME" value="br.com.avancado.cnpj.CnpjFacadeTest" />
+      <option name="METHOD_NAME" value="deveRecusarCnpjNumericoRealComDvInvalido" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,20 +171,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.EfetuarCalculos" />
       <item itemvalue="JUnit.CNPJTest" />
-      <item itemvalue="JUnit.CNPJTest.deveRecusarCNPJComCaracteresEspeciaisInvalidos" />
+      <item itemvalue="JUnit.CnpjFacadeTest.devePermitirConversaoCompletaPorPadrao" />
+      <item itemvalue="JUnit.CnpjFacadeTest.devePermitirIdentificacaoComCnpjAlfanumericoValido" />
+      <item itemvalue="JUnit.CnpjFacadeTest.deveRecusarCnpjNumericoRealComDvInvalido" />
       <item itemvalue="JUnit.All in estudos" />
-      <item itemvalue="JUnit.ContaBancariaTest" />
       <item itemvalue="Maven.estudosTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in estudos" />
+        <item itemvalue="JUnit.CnpjFacadeTest.deveRecusarCnpjNumericoRealComDvInvalido" />
+        <item itemvalue="JUnit.CnpjFacadeTest.devePermitirIdentificacaoComCnpjAlfanumericoValido" />
+        <item itemvalue="JUnit.CnpjFacadeTest.devePermitirConversaoCompletaPorPadrao" />
         <item itemvalue="JUnit.CNPJTest" />
-        <item itemvalue="JUnit.CNPJTest.deveRecusarCNPJComCaracteresEspeciaisInvalidos" />
-        <item itemvalue="Application.EfetuarCalculos" />
-        <item itemvalue="JUnit.ContaBancariaTest" />
       </list>
     </recent_temporary>
   </component>
@@ -194,17 +208,29 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/br/com/avancado/cnpj/CNPJTest.java</url>
-          <line>40</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CNPJ.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CNPJ.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CnpjFacade.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CnpjAdaptador.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CnpjAdaptador.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/avancado/cnpj/CNPJAlfanumerico.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -213,6 +239,6 @@
     <SUITE FILE_PATH="coverage/estudos_vaja$CNPJTest.ic" NAME="CNPJTest Coverage Results" MODIFIED="1751745735351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>br.com.avancado.cnpj.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/estudos_vaja$All_in_estudos.ic" NAME="All in estudos Coverage Results" MODIFIED="1751750484858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/estudos_vaja$All_in_estudos.ic" NAME="All in estudos Coverage Results" MODIFIED="1751771296486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
