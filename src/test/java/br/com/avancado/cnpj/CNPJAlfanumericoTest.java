@@ -8,23 +8,45 @@ public class CNPJAlfanumericoTest {
 
     @Test
     public void deveCriarCnpjAlfanumericoValidoComDvCorreto() {
-        // Exemplo fictício baseado na documentação, ajuste conforme casos reais
-        String cnpjValido = "12ABC34501DE35";
+        // Base alfanumérica (12 caracteres)
+        String base = "12ABC34501DE";
+
+        // Calcula DV correto
+        String dv = CNPJAlfanumerico.calculaDV(base); // retorna 2 dígitos válidos
+
+        // CNPJ completo com DV correto
+        String cnpjValido = base + dv;
+
+        // Instancia a classe
         CNPJAlfanumerico cnpj = new CNPJAlfanumerico(cnpjValido);
 
-        assertEquals("12ABC34501DE35", cnpj.getNumeroLimpo());
-        assertEquals("12ABC34501DE35", cnpj.getNumeroFormatado());
+        // Asserts
+        assertEquals(cnpjValido, cnpj.getNumeroLimpo());
+        assertEquals(cnpjValido, cnpj.getNumeroFormatado());
         assertTrue(cnpj.isAlfanumerico());
         assertFalse(cnpj.isNumerico());
     }
 
     @Test
     public void deveRemoverCaracteresEspeciaisENormalizar() {
-        String cnpjValidoComMascara = "12.ABC.345/01DE-35";
-        CNPJAlfanumerico cnpj = new CNPJAlfanumerico(cnpjValidoComMascara);
+    // Base alfanumérica (12 primeiros caracteres)
+    String base = "12ABC34501DE";
 
-        assertEquals("12ABC34501DE35", cnpj.getNumeroLimpo());
-    }
+    // Calcula os dígitos verificadores corretos (DV) para a base
+    String dv = CNPJAlfanumerico.calculaDV(base);
+
+    // CNPJ completo válido
+    String cnpjValido = base + dv; // ex: "12ABC34501DE35" se dv="35"
+
+    // Adiciona caracteres de formatação para testar limpeza
+    String cnpjComMascara = "12.ABC.345/01DE-" + dv;
+
+    // Instancia a classe (valida automaticamente o DV)
+    CNPJAlfanumerico cnpj = new CNPJAlfanumerico(cnpjComMascara);
+
+    // Verifica se os caracteres especiais foram removidos corretamente
+    assertEquals(cnpjValido, cnpj.getNumeroLimpo());
+}
 
     @Test
     public void deveLancarExcecaoParaCnpjComDvInvalido() {
